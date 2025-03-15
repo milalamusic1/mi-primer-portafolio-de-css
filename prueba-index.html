@@ -1,0 +1,207 @@
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portafolio</title>
+    </head>
+    <body>
+        <h1>Esto es un título</h1>
+        <p>Esto es un párrafo</p>
+        <img scr="html5.png" alt="Logo de HTML 5">
+    </body>
+</html>
+
+
+Asi es como se hacen comentarios en HTML. Se pone el
+DOCTYPE con ! como shortcut, el lenguaje se configura 
+dependiendo de las encesidades, el UTF-8 es el set
+de caracteres mas usados e internet, y es unicode para
+que las pags funcionen bien; meta name y content configuran
+que la pag se adapte flexiblemente al dispositivo de
+donde se vea (compu, cel, etc), y title es el titulo
+de la pestanha de lavegador, NO de la pagina. Como punto 
+adicional, para no complicarse editando en HTML, pusimos
+link en relacion al stylesheet, donde la referencia del
+estilo visual de la pagina se linkea al archivo de css 
+donde editamos- en este caso, new-style.css.
+
+La pagina siempre tiene dos secciones- Head y Body, y en el
+Body hay Header, Main, y Footer. En cada una se pone <h1> para
+el titulo de la seccion, y <p> para Parrafo.
+
+HTML 5 es el esqueleto-ahora vamos al archivo de CSS, que hace
+que el contenido nos quede con estilo.
+
+img no necesita ser cerrado 
+-->
+
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/new-style.css">
+</head>
+<body>
+    <header class="header">
+       <nav class="header__menu">
+        <a class="header__menu__link" href="prueba-index.html">Home</a>
+        <a class="header__menu__link" href="about.html">Sobre Mi</a>
+       </nav> 
+    </header>
+    <main class="presentacion">
+        <section class="presentacion__contenido">
+        <h1 class="presentacion__contenido__titulo">
+            Eleve tu negocio digital a otro nivel 
+            <strong class="titulo-destaque">con un Front-end de calidad!
+            </strong></h1>
+            <p class="presentacion__contenido__texto"> <!--<strong>¡Hola! Soy Ana García,</strong> ya no se 
+                necesita, porque el archivo de CSS tiene una clase
+                que creamos para hacer el formato de este texto--> 
+                ¡Hola! Soy Ana García, desarrolladora Front-end 
+                con especialización en React, 
+                HTML y CSS. Ayudo a pequeños negocios y diseñadores 
+                a llevar a cabo buenas ideas. ¿Hablamos?
+
+            </p>
+            <!--<div> sirve para agrupar -->
+            <div class="presentacion__enlaces">
+                <h2 class="presentacion__enlaces__subtitulo">Accede a mis redes:</h2>
+                <a class="presentacion__enlaces__link" href="https://www.instagram.com/">Instagram</a>
+                <img src="./assets/instagram.png"> <!--esta es la ubicacion del archivo de imagen que va
+                dentro del boton. esta en la carpeta que creamos en vs code llamada assets, 
+                especial para este programa.-->>
+                <a class="presentacion__enlaces__link" href="https://www.github.com/">Github</a>
+                <img src="./assets/Imagem.png">>
+            </div>
+            </section>
+            <img class="presentacion__imagen" src=".assets/Imagem.png" alt="Imagen de Ana Garci trabajando" 
+    </main>
+     <footer>
+        <p>Desarrollado por Allura Latam</p>
+     </footer>
+</body>
+</html>
+
+<!--Qué es la etiqueta <section>?
+La etiqueta <section> en HTML se utiliza para definir secciones en un documento. Una sección es un contenedor temático que agrupa contenido relacionado. Esta etiqueta es útil para estructurar el contenido de manera más clara y semántica, lo que facilita la comprensión tanto para los desarrolladores como para los motores de búsqueda.
+
+Características principales de la etiqueta <section>:
+Agrupación Temática: Agrupa contenido que pertenece a un mismo tema o propósito. Por ejemplo, un grupo de artículos sobre el mismo tema dentro de una página de noticias.
+
+Mejora de la Semántica: Ayuda a mejorar la semántica del documento, lo que significa que los motores de búsqueda y otros agentes pueden entender mejor la estructura y el contenido de la página.
+
+Accesibilidad: Facilita la navegación para tecnologías de asistencia, como lectores de pantalla, mejorando así la accesibilidad del sitio web.
+
+Uso con Encabezados: Generalmente se utiliza en combinación con encabezados (<h1>, <h2>, etc.) para definir la estructura de la sección.
+
+Ejemplo de uso:
+<section>
+  <h2>Título de la sección</h2>
+  <p>Contenido relacionado con el tema de la sección.</p>
+  <p>Más contenido relevante.</p>
+</section>
+Copia el código
+En este ejemplo, <section> se utiliza para agrupar el contenido relacionado con un título específico, mejorando así la organización y semántica del documento HTML.
+
+Agregando la etiqueta section al nuestro html
+Hasta el momento teníamos el siguiente código:
+
+
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header></header>
+    <main class="presentacion">
+            <h1>
+                Eleve tu negocio digital a otro nivel 
+                <strong class="titulo-destaque">con un Front-end de calidad!
+                </strong></h1>
+                <p>¡Hola! Soy Ana García, desarrolladora Front-end con
+                    especialización en React, HTML y CSS. Ayudo a pequeños
+                    negocios y diseñadores a llevar a cabo buenas ideas.
+                    ¿Hablamos?
+
+                </p>
+                <a href="https://instagram.com/">Instagram</a>
+                <a href="https://github.com/">GitHub</a>
+            <img src="Imagem.png" alt="Foto de Ana García desarrolando un proyecto">
+    </main>
+    <footer></footer>
+</body>
+</html>
+Copia el código
+Cuando miramos el layout de figma que queremos construir, podemos pensarlo en dos partes: el contenido (<h1>, <p>, <a>) y la imagen. Cómo la etiqueta section tiene como una de sus funciones agrupar contenido, podemos agregarla en nuestro código para incluir valor semántico:
+
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header></header>
+    <main class="presentacion">
+        <section>
+            <h1>
+                Eleve tu negocio digital a otro nivel 
+                <strong class="titulo-destaque">con un Front-end de calidad!
+                </strong></h1>
+                <p>¡Hola! Soy Ana García, desarrolladora Front-end con
+                    especialización en React, HTML y CSS. Ayudo a pequeños
+                    negocios y diseñadores a llevar a cabo buenas ideas.
+                    ¿Hablamos?
+
+                </p>
+                <a href="https://instagram.com/">Instagram</a>
+                <a href="https://github.com/">GitHub</a>
+        </section>
+            <img src="Imagem.png" alt="Foto de Ana García desarrolando un proyecto">
+    </main>
+    <footer></footer>
+</body>
+</html>
+Copia el código
+Ahora tenemos una etiqueta <section> después de la apertura de la etiqueta <main> y antes de la etiqueta <img> y creamos una sección para agrupar todo lo que está relacionado a los textos y acciones del código.
+
+-->
+
+
+
+<!--Cuando usar una div
+La etiqueta <div> define una división en un documento HTML y suele utilizarse como un contenedor para otros elementos, lo que ayuda en la estilización del bloque. Por este motivo, la <div> se utiliza frecuentemente cuando necesitamos agrupar elementos sin usar las etiquetas semánticas de HTML. Esto se debe a que la <div> no tiene valor semántico. Por lo tanto, no significa nada para los navegadores y motores de búsqueda.
+
+Además, al ser muy utilizada para agrupar elementos, facilita la organización de la información en los diseños. De esta forma, puede ser formateada y manipulada orgánicamente a través de CSS. Por lo general, se acompaña de atributos de ID y clase para facilitar esta organización y formateo.
+
+Si deseas profundizar en el tema, te recomendamos que leas la documentación oficial.-->
+
+
+<!--El elemento de anclaje <a> con el atributo href crea un hipervínculo en las páginas web, a través de una URL que indica el destino del enlace. A partir de esto, imagina que has creado una lista de enlaces en tu página web y necesitas personalizarlos en CSS en dos aspectos: eliminar el subrayado y crear un fondo gris con bordes redondeados.
+
+Marca la alternativa correcta que indique el código CSS responsable de esta personalización:
+
+a {
+    text-decoration: none;
+    background-color: grey;
+    border-radius: 10px;
+}
+
+¡Correcto! Todas las propiedades y valores utilizados están correctos en contexto y sintaxis. Mientras que el valor none es responsable de eliminar las decoraciones del elemento de anclaje, la propiedad border-radius hace que los bordes de los enlaces sean redondeados.
+
+-->
+
+
+

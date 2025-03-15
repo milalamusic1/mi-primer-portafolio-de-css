@@ -1,0 +1,364 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); 
+/*aqui salen los tipos de letra que se usan en la pagina web. 
+se importa el codigo embedded de google fonts, y se usa el de css para la configuracion*/
+
+
+/* poner un asterisco es hacer un cambio universal en el archivo,
+es decir, algo que aplica globalmente.
+
+Para resetear los estilos por defecto de los navegadores de 
+forma efectiva, utilizamos las propiedades margin, que define 
+el margen en los cuatro lados del elemento (arriba, derecha, 
+abajo, izquierda), y padding, que define el relleno interno 
+en los mismos cuatro lados del elemento, ambas con un valor 
+de 0.*/
+
+
+:root{
+  --color-primario: #0000;
+  --color-secundario: #f6f6f6;
+  --color-terciario: #22D4FD;
+  --color-hover: #272727;
+
+  --fuente-montserrat: 'Montserrat', sans-serif; /*solo una 
+  comilla para el directorio root, en donde dejamos registro
+  de las variables css mas usadas en nuestro proyecto,
+  para que, en caso de haber cambios, no tengamos que modificar 
+  cada una individualmente en el codigo, sino que cambiamos
+  la que esta donde el Sr. Root w4w
+  
+  luego de definir las variables en el directorio root, usamos la
+  funcion var (de variable), para enrutar los colores hacia lo que
+  determinamos en el directorio del Sr. Root*/
+  --fuente-krona: 'Krona One', sans-serif;
+  s
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: var(--color-primario);  /*black;*/ /* puedes usar el nombre, o el codigo de color rgb */
+    color: vaar(--color-secundario);
+    
+    /*#f6f6f6;*/
+    
+    /* height: 100vh  
+    
+    100 es el porcentaje, v es para viewport,
+    o la visualizacion de la pagina, y h es para height o altura
+    del contenido.
+    
+    TENER EN CUENTA:
+    width + padding + border= actual width of the element
+    height + padding + border= actual height of the element
+    
+    el elemento padre (border box), o la caja externa, debe delimitar
+    el tamanho del elemento hijo (content box), o caja interna,
+    para que se vea todo el contenido correctamente.
+    
+    otra opcion es tener un flex container, que seria el padre,
+    y varios containers pequenhos, que serian los hijos
+    
+    Nota 2: ahora que hay mas cosas en la pagina, ya no necesitamos que
+    el height sea 100, poruqe hay mas cosas que neceistan ocupar espacio,
+    como el header y el footer, por ejemplo. En este caso, solo lo 
+    borramos.*/
+}
+
+/*
+strong{
+    color:#22D4FD;
+}      
+    este es el simbolo para 
+    resaltar una parte del texto. sin embargo
+    si se ponen colores ahi, en todas las partes 
+    del texto que se quieran resaltar, va a haber 
+    la misma coonfiguracion de color.
+    Para evitar eso, se pone un punto para crear una clase
+    y luego se describe de que trata la clase- color, tipo
+    de letra, etc
+
+    P. ej:
+
+    .titulo {
+    color: red;
+}
+
+Para estilizar una clase en CSS, es neces ario utilizar el punto 
+antes de llamar al nombre asignado a la clase. Además, es la 
+propiedad color de CSS la que define el valor del color de un 
+elemento, y en este caso, el valor red corresponde al color rojo.
+
+ .titulo {
+    color: red;
+}
+
+    */
+
+.header{
+    padding: 2% 0% 0% 15%; /*el padding funciona con cuatro metricas,
+    en el orden top, right, bottom, y left. Aqui buscamos que el header
+    se alinee con el cuerpo en la misma medida, es decir, un 15% retirado
+    del borde*/
+}
+
+
+.header__menu{
+    display: flex;
+    gap: 80px;
+
+}
+
+
+.header__menu__link{
+    font-family: var(--fuente-montserrat);   /*"Montserrat", sans-serif;*/
+    font-size: 1.5rem; /*24px;   vamos a manejar en em y rem los tamanhos de letra,
+    para activar opciones de mayor tamanho por accesibilidad
+    en el navegador. de otra manera, queda siempre fijo el tamanho,
+    aun con opciones de accesibilidad*/
+    font-weight: 600;
+    color: var(--color-terciario);    /*#22D4FD*/
+    text-decoration: none;
+}
+
+
+
+.presentacion{
+    /*DISPLAY FLEX: esto es para trabajar con flex containers, como
+    padres de las demas cajas
+    
+    .sobre-mim {
+display: flex;
+}
+
+¡Correcto! El selector de clase se utilizó correctamente 
+mediante el punto (.) antes del nombre y la propiedad display 
+con el valor flex es la estructura estándar de Flexbox.*/
+    display: flex; 
+    align-items: center;
+    padding: 5% 15%;
+    justify-content: space-between;
+    gap: 82px;
+
+}
+
+.presentacion__contenido{
+    width: 50%; /*615px;*/
+    display: flex;
+    flex-direction: column; /*esto es para trabajar el ancho 
+    y la distribucion entre las filas o columnas de texto, en
+    los boxes*/
+    gap: 40px;
+
+}
+
+
+.presentacion__contenido__titulo{
+    font-size: 2.5rem; /*36px;*/
+    font-family: var(--fuente-krona);/*"Krona One", sans-serif;*/
+}
+
+.titulo.destaque{
+    var(--color-terciario);/*color:#22D4FD;*/
+
+}
+
+.presentacion__contenido__texto{
+    font-size: 1.5rem; /*24px;*/
+    font-family: var(--fuente-montserrat); /*"Montserrat", sans-serif;*/
+}
+
+
+.presentacion__enlaces{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column; /*al cambiar el flex direction de 
+    row a column, tambien cambiamos de un eje horizontal a uno 
+    vertical. por ende, si queremmos que los botones se centren,
+    ya no usamos justify content sino align items*/
+    align-items: center;
+    gap: 32px; /*modifica el espacio entre botones*/
+
+    
+}
+
+.presentacion__enlaces__subtitulo{
+    font-family: var(--fuente-montserrat);  /*"Montserrat", sans-serif;*/
+    font-size: 1.5rem; /*24px;*/
+    font-weight: 400;
+
+}
+
+
+.presentacion__enlaces__link{
+    width: 50%; /*378px;* se cambio porque estaba fijo, ahora usamos porcentajes,
+    para mejorar la accesibilidad y las vistas desde multiples
+    dispositivos/
+
+    /*background-color: #22D4DF; este color ya no se va a usar,
+    porque en un nuevo cambio de disenho, se opto porque
+    los botones fueran transparentes. Ahora falta hacer
+    los bordes, y cambiar el color del texto dentro de los
+    botones*/
+
+    text-align: center;
+    padding: 21.5px 0; /*cuando se ponen dos valores, el 
+    primero es la vertical, y el segundo el horizontal. 
+    esto sirve para enmarcar la distancia a la cual el 
+cuadro de texto queda dentro del boton*/
+    border-radius: 8px; /*sirve para redondear los bordes
+    de los botones*/
+    font-family: var(--fuente-montserrat);  /*"Montserrat", sans-serif;*/
+    font-size:  1.5rem; /*24px;*/
+    font-weight: 600;
+    text-decoration: none; /*esto quita la linea de debajo del
+    texto en los links de los botones*/
+    color:  var(--color-secundario); /*#f6f6f6;*/ /*color de texto dentro de los botones*/
+    border: 2x solid var(--color-terciario);   /*#22D4FD*/ /*tamanho de linea, tipo de linea 
+    y color de la linea del borde*/
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+    /*la funcion hover sirve para accionar cosas sobre los botones;
+    por ejemplo, que el boton blanco cambie a azul cuando el cursor
+    se coloque sobre el*/
+.presentacion__enlaces__link:hover{
+    background-color: var(--color-hover);  /*#272727;*/
+}
+
+
+.presentacion__imagen{
+    width: 50%;
+
+}
+
+.footer{
+    background-color: var(--color-terciario); /*#22D4FD;*/
+    padding: 1.5rem; /*24px;*/
+    color: var(--color-primario);  /*#0000;*/
+    text-align: center;
+    font-family: var(--fuente-montserrat);  /*"Montserrat", sans-serif;*/
+    font-size: 1.5rem; /*24px;*/
+    font-weight: 400;
+
+}  
+
+/* este paso del Media Querie hace que, al llegar a un ancho
+maximo que definamos, el layout de la pagina puede cambiar,
+para leerse mejor en otros dispisitivos. en este caso particular,
+hicimos que un ancho menor a 1200px invierta la direccion
+de toda la presentacion, priorizando el orden por columnas, 
+en vez del de filas, o rows. Tambien arreglammos el padding superior,
+para que este este espaciado correctamente del borde superior, y
+justificamos las opciones de navegacion del menu para visibilidad
+en movil. */
+@media(max-width: 1200px ){
+
+    .header{
+        padding: 10%;
+    }
+
+    .header__menu{
+        justify-content: center;
+    }
+
+    .presentacion{
+        flex-direction: column;
+        padding: 5%;
+
+    }
+    .presentacion__contenido{
+        width: auto; /*Gralmente, tambien funciona si uno pone 100%,
+        poruqe eso hace que el contenido se distribuya por todo el
+        ancho de la pantalla*/
+    }
+}
+
+
+/*FUNCION MEDIA QUERIES:
+¿Sabías que puedes tener más de una media query en tu proyecto? 
+Es posible definir un tamaño de pantalla para el celular, 
+otro para la tableta y dejar el "predeterminado" para el 
+escritorio.
+
+Por ejemplo:
+
+Podemos definir un ancho máximo de "480px" para el celular: 
+@media (max-width: 480px), y en otra media query definir un 
+ancho máximo de "800px" para las tabletas: @media (max-width: 
+800px), y luego asignamos los ajustes necesarios dentro de 
+cada media query, de esta manera tendremos nuestro sitio 100% 
+responsivo.
+
+También podemos definir rangos para los tamaños de pantalla 
+con una única media query, asignamos el valor mínimo y luego 
+el valor máximo separándolos con el atributo "and", así: @media 
+(min-width: 480px ) and (max-width: 800px), en este caso, los 
+estilos se aplicarán en pantallas de al menos "480px" y como 
+máximo "800px".
+
+Recordando que la mayoría de los accesos a internet hoy en día 
+se realizan a través de dispositivos móviles, por lo tanto, 
+no olvides siempre hacer que tus proyectos y sitios sean 
+responsivos.
+
+Para aprender más, visita el sitio de Mozilla y lee la 
+documentación sobre media queries.*/
+
+/**en este momento, el color de este footer esta heredado de la 
+configuracion general que dejamos para el body. Si quiero cambios, 
+hay que personalizar por clase/
+
+
+}
+
+
+/*FUNCION REM:
+Sirve para hacer los textos mas grandes en las opciones de 
+accesibilidad del navegador.
+P. ej: En píxeles font-size: 40px, en REM 2.5rem.
+
+
+Como no se ha establecido un tamaño de fuente predeterminado 
+en la raíz del proyecto, un REM por defecto del navegador 
+equivale a 16px, por lo tanto, 40px dividido por 16px del REM 
+es igual a 2.5rem.
+
+Alternativa correta
+En píxeles font-size: 24px, en REM 1.5rem.
+
+
+Como no se ha definido un tamaño de fuente predeterminado 
+en la raíz del proyecto, un REM por defecto del navegador 
+equivale a 16 píxeles. Por lo tanto, 24px dividido por 16px 
+del REM es igual a 1.5rem.*/
+
+
+
+/*
+PARA TENER EN CUENTA- DIFERENCIAS DE LENGUAJE ENTRE HTML Y CSS
+
+
+HTML
+Antes de alinear los elementos en CSS, tenemos que crear la clase en el archivo HTML. Para hacerlo, vamos a la etiqueta <main> y dentro de ella agregamos la propiedad class. Recuerda que, al igual que cualquier otra propiedad, debemos utilizar el signo de igual (=) para asignar un valor, o en este caso un nombre, el cual debe estar entre comillas dobles (“”). Sigue el código:
+
+<main class="presentacion">
+Copia el código
+Observa que hemos definido el nombre de la clase como "presentacion" y no hemos utilizado la tilde, siguiendo así las buenas prácticas mencionadas anteriormente.
+
+CSS
+Ahora que el código HTML está listo, vamos a alinear los elementos en CSS. Para empezar, utilizamos el selector .presentacion para seleccionar solo los elementos que están dentro de nuestra clase creada en el contenido de main. Después de abrir y cerrar las llaves, la estructura básica de CSS, vamos a utilizar solo dos líneas de código para obtener el resultado final. Sigue el código a continuación:
+
+.presentacion {
+    display: flex;
+    align-items: center;
+}
+Copia el código
+Observa ahora que hemos utilizado la propiedad display con el valor flex para poder utilizar Flexbox en nuestra estilización. Entonces, hemos escrito align-items con el valor center para alinear los elementos, centrándolos respecto a sí mismos. ¡Y listo! Tenemos nuestro código estructurado y funcional, con los elementos alineados.*/
